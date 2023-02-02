@@ -1,0 +1,16 @@
+<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+
+<div class="container" *ngIf="this.todosArr.length === 0; else elseBlock">
+  Todo List is Empty
+</div>
+
+<ng-template #elseBlock>
+  <div class="d-flex flex-row justify-content-between flex-wrap container">
+    <div *ngFor="let todo of todosArr" class="p-3">
+      <app-todo-item
+        [todoItem]="todo"
+        (todoDelete)="deleteTodo($event)"
+      ></app-todo-item>
+    </div>
+  </div>
+</ng-template>
