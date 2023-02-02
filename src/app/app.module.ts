@@ -9,6 +9,7 @@ import { TodoItemComponent } from './todo-app/todo-item/todo-item.component';
 import { AddTodoComponent } from './todo-app/add-todo/add-todo.component';
 import { DeleteTodoComponent } from './todo-app/delete-todo/delete-todo.component';
 import { FormsModule } from '@angular/forms';
+import { ToastService, AngularToastifyModule } from 'angular-toastify';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,13 @@ import { FormsModule } from '@angular/forms';
     AddTodoComponent,
     DeleteTodoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularToastifyModule,
+    FormsModule,
+  ],
+  providers: [ToastService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

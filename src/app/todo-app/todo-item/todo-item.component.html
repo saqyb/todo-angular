@@ -1,10 +1,14 @@
 <div class="card" style="width: 18rem">
-  <div class="card-body">
-    <h5 class="card-title">{{ todoItem.title }}</h5>
-    <p class="card-text">{{ todoItem.desc }}</p>
-    <div class="d-flex flex-row justify-content-between">
-      <a class="btn btn-danger" (click)="onDelete(todoItem)">Delete</a>
-      <a class="btn btn-primary">Done</a>
+  <div class="card-body" [class]="todoItem.active ? 'bg-info' : 'bg-warning'">
+    <div>
+      <h5 class="card-title">{{ todoItem.title }}</h5>
+      <p class="card-text">{{ todoItem.desc }}</p>
+      <p>Status:{{ todoItem.active }}</p>
+      <div class="d-flex flex-row justify-content-between">
+        <a class="btn btn-danger" (click)="onDelete(todoItem)">Delete</a>
+        <a class="btn btn-primary" (click)="onDone(todoItem)">Done</a>
+      </div>
     </div>
   </div>
 </div>
+<lib-toastify-toast-container></lib-toastify-toast-container>

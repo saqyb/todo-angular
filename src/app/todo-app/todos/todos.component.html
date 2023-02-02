@@ -10,6 +10,7 @@
       <app-todo-item
         [todoItem]="todo"
         (todoDelete)="deleteTodo($event)"
+        (activeToggle)="toggleActive($event)"
       ></app-todo-item>
     </div>
   </div>
